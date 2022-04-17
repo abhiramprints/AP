@@ -530,28 +530,6 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    <!-- Scroller Button -->
-    <script>
-      $('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
-    
-      var amountScrolled = 10;
-    
-      $(window).scroll(function() {
-        if ( $(window).scrollTop() > amountScrolled ) {
-          $('a.back-to-top').fadeIn('slow');
-        } else {
-          $('a.back-to-top').fadeOut('slow');
-        }
-      });
-      
-      $('a.back-to-top').click(function() {
-        $('html, body').animate({
-          scrollTop: 0
-        }, 700);
-        return false;
-      });
-    </script>
-
     <!-- Cookie Settings -->
     <script>
       function cookie() {
