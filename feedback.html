@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== Title of Page ===== -->
+        <link rel="icon" href="./assets/logos/AP-icon.png" />
+        <title>Feedback: ABHIRAM PRINTS</title>
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="./login.css">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="l-form">
+            <div class="shape1"></div>
+            <div class="shape2"></div>
+
+            <div class="form">
+                <img src="./assets/backdrops/giving_feedback.png" alt="" class="form__img">
+
+                <form name="feedback" id="feedback" method="POST" class="form__content">
+                    <img src="./assets/logos/AP-RED.png" style="height: 100px; display: block; justify-content: center; align-items: center; text-align: center; padding-bottom: 15px; padding-left: 51px;" />
+                    <!-- <h1 class="form__title">Welcome to ABHIRAM PRINTS</h1> -->
+
+                    <div class="form__div">
+                        <div class="form__icon">
+                            <i class='bx bx-user-circle'></i>
+                        </div>
+
+                        <div class="form__div-input">
+                            <!-- <label for="" class="form__label">Name</label> -->
+                            <input type="text" class="form__input" name="Name" id="Name" placeholder="Name" required>
+                        </div>
+                    </div>
+
+                    <div class="form__div">
+                        <div class="form__icon">
+                            <i class='bx bx-phone' ></i>
+                        </div>
+
+                        <div class="form__div-input">
+                            <!-- <label for="" class="form__label">Mobile Number</label> -->
+                            <input type="text" name="Mobile Number" id="Mobile Number" placeholder="Mobile Number" class="form__input" required>
+                        </div>
+                    </div>
+
+                    <div class="form__div">
+                        <div class="form__icon">
+                            <i class='bx bx-envelope' ></i>
+                        </div>
+
+                        <div class="form__div-input">
+                            <!-- <label for="" class="form__label">Email Address</label> -->
+                            <input type="text" name="Email Address" id="Email Address" placeholder="Email address" class="form__input" required>
+                        </div>
+                    </div>
+
+                    <div class="form__div">
+                        <div class="form__icon">
+                            <i class='bx bx-pencil' ></i>
+                        </div>
+
+                        <div class="form__div-input">
+                            <!-- <label for="" class="form__label">Feedback</label> -->
+                            <input type="text" name="Feedback" id="Feedback" placeholder="Feedback in words" class="form__input" required>
+                        </div>
+                    </div>
+
+                    <div class="form__div">
+                        <div class="form__icon">
+                            <i class='bx bx-male' ></i>
+                        </div>
+                        <div class="form-check" style="word-spacing: 10px;">
+                            <input class="form-check-input" type="radio" name="Gender" id="Gender" value="Male">
+                            <label class="form-check-label" for="Gender1">Male</label>
+                            <input class="form-check-input" type="radio" name="Gender" id="Gender" value="Female">
+                            <label class="form-check-label" for="Gender1">Female</label>
+                            <input class="form-check-input" type="radio" name="Gender" id="Gender" value="Other">
+                            <label class="form-check-label" for="Gender1">Other</label>
+                        </div>
+                    </div>
+
+                    
+
+                    <button id="submit" name="submit" type="submit" class="form__button">Submit your feedback</button>
+
+                    <div class="form__social">
+                        <span class="form__social-text">Follow us on social media:</span>
+    
+                        <a href="https://www.google.com/search?q=abhiram+prints+near+palamaner%2C+andhra+pradesh&rlz=1C1CHBF_enIN968IN968&oq=&sourceid=chrome&ie=UTF-8" class="form__social-icon"><i class='bx bxl-google' ></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=917306454612&text=Hello Abhiram Prints" class="form__social-icon"><i class='bx bxl-whatsapp' ></i></a>
+                        <a href="https://www.facebook.com/groups/2756984784553411/?ref=share" class="form__social-icon"><i class='bx bxl-facebook' ></i></a>
+                        <a href="https://www.instagram.com/abhiramprints_2020/?utm_medium=copy_link" class="form__social-icon"><i class='bx bxl-instagram' ></i></a>
+                        <a href="https://www.linkedin.com/company/abhiram-prints/" class="form__social-icon"><i class='bx bxl-linkedin' ></i></a>
+                        <a href="https://github.com/abhiramprints" class="form__social-icon"><i class='bx bxl-github' ></i></a>
+                        <a href="https://www.youtube.com/channel/UCubNcg7bITuiyPptGQtbHcw" class="form__social-icon"><i class='bx bxl-youtube' ></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+
+    <!-- HTML Form JS -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyRFLsb07Bcin7RL4tQ7iymXkbUjvxiRipEy54T_l383InNfmw48Ce2kz3oeou0L1Xn/exec'
+        const form = document.forms['feedback']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thank you very much for your valuable feedback. \nRegards, Gift Basket"))
+            .catch(error => console.error('Error!', error.message))
+        })
+        document.getElementById("feedback").reset();
+    </script>
+</html>
